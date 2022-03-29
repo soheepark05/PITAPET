@@ -1,0 +1,430 @@
+/* Global */
+:root {
+  /* Color */
+  --color-white: #ffffff;
+  --color-light-white: #e1e2e1;
+  --color-dark-white: #bdbdbd;
+  --color-pink: #fe918d;
+  --color-purple: #8c52ff;
+  --color-dark-pink: #ff6863;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #616161;
+  --color-light-grey: #7c7979;
+  --color-blue: #0288d1;
+  --color-dark-blue: #005b9f;
+  --color-light-blue: #5eb8ff;
+  --color-yellow: #fff7d1;
+  --color-orange: #feb546;
+  --color-black: #000000;
+  --color-green: #00695c;
+  --color-dark-green: #002232;
+  --color-light-green: #4e7589;
+  --color-bg-green: #20495c;
+
+  /* Font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* Font weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+
+  /* Size */
+  --size-border-radius: 4px;
+
+  /* Annimation */
+  --animation-duration: 300ms;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+.fp-prev {
+  margin-left: 40px;
+}
+
+.fp-next {
+  margin-right: 40px;
+}
+
+body {
+  font-family: "Gowun Dodum", sans-serif;
+  position: relative;
+  text-align: center;
+  background: linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%);
+  color: #555;
+  font-weight: 300;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+#fullpage {
+  text-align: center;
+}
+
+#header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  width: 100%;
+  top: 0;
+  padding: 40px;
+  z-index: 100;
+  background: transparent;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo__img {
+  width: 30px;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+}
+
+.header__menu li {
+  margin: 0 15px;
+  list-style: none;
+}
+
+.section__div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 200px;
+  font-weight: 400;
+  pointer-events: none;
+}
+
+.title__div {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 1080px;
+}
+
+.title__div:first-of-type {
+  animation: showup 12s infinite;
+}
+
+.title__div:last-of-type {
+  width: 0px;
+  animation: reveal 12s infinite;
+}
+
+.title__div:last-of-type span {
+  margin-left: -355px;
+  animation: slidein 12s infinite;
+}
+
+@keyframes showup {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    margin-left: -800px;
+  }
+  20% {
+    margin-left: -800px;
+  }
+  35% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    width: 0px;
+  }
+  20% {
+    opacity: 1;
+    width: 0px;
+  }
+  30% {
+    width: 550px;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 550px;
+  }
+}
+
+.section__container {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+}
+
+
+
+
+/* 어바웃 어스 */
+
+.fisrt {
+  width: 450px;
+  height: 250px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin: 1.5rem;
+  font-size: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  font-family: "Gowun Dodum", sans-serif;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  font-family: "Gowun Dodum", sans-serif;
+}
+
+.center:before {
+  display: flex;
+  content: none;
+   font-family: "Gowun Dodum", sans-serif;
+}
+
+.center:after {
+  display: flex;
+  content: none;
+   font-family: "Gowun Dodum", sans-serif;
+}
+
+.card {
+  width: 450px;
+  height: 250px;
+  background-color: #fff;
+  background: linear-gradient(#f8f8f8, #fff);
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin: 1.5rem;
+}
+
+.card h1 {
+  text-align: center;
+}
+
+.card .additional {
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(#de685e, #ee786e);
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card.green .additional {
+  background: linear-gradient(#92bca6, #a2ccb6);
+}
+
+.card:hover .additional {
+  width: 100%;
+  border-radius: 0 5px 5px 0;
+}
+
+.card .additional .user-card {
+  width: 150px;
+  height: 100%;
+  position: relative;
+  float: left;
+}
+
+.card .additional .user-card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10%;
+  right: -2px;
+  height: 80%;
+  border-left: 2px solid rgba(0, 0, 0, 0.025);
+}
+
+.level {
+  text-align: center;
+}
+
+.card .additional .user-card .level,
+.card .additional .user-card .points {
+  top: 15%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 0.125rem 0.75rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.card .additional .user-card .points {
+  top: 85%;
+}
+
+.card .additional .user-card img {
+  top: 50%;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+
+.card .additional .more-info {
+  width: 300px;
+  float: left;
+  position: absolute;
+  left: 150px;
+  height: 100%;
+}
+
+.card .additional .more-info h1 {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.card.green .additional .more-info h1 {
+  color: #224c36;
+}
+
+.card .additional .coords {
+  margin: 0 1rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.card.green .additional .coords {
+  color: #325c46;
+}
+
+.card .additional .coords span + span {
+  float: right;
+}
+
+.card .additional .stats {
+  font-size: 2rem;
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  top: auto;
+  color: #fff;
+}
+
+.card.green .additional .stats {
+  color: #325c46;
+}
+
+.card .additional .stats > div {
+  flex: 1;
+  text-align: center;
+}
+
+.card .additional .stats i {
+  display: block;
+  color: white;
+}
+
+.card .additional .stats div.title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.card .additional .stats div.value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+.card .additional .stats div.value.infinity {
+  font-size: 2.5rem;
+}
+
+.card .general {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-top: 0;
+  
+}
+
+.card .general .more {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.9em;
+   font-family: "Gowun Dodum", sans-serif;
+}
+.simuruk_dog img{
+	
+	border-radius: 5px;
+}
